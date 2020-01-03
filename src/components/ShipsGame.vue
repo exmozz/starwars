@@ -38,7 +38,11 @@ export default {
   computed: {
     winner () {
       if ((this.leftPlayer && this.rightPlayer) > 0) {
-        return (Number(this.leftPlayer) > Number(this.rightPlayer)) ? 'Left' : 'Right'
+        if (this.leftPlayer === this.rightPlayer) {
+          return 'None'
+        } else {
+          return (Number(this.leftPlayer) > Number(this.rightPlayer)) ? 'Left' : 'Right'
+        }
       } else {
         return false
       }
@@ -47,7 +51,6 @@ export default {
   watch: {
     winner (newVal, oldVal) {
       this.$store.commit('addShipsWin', newVal)
-      console.log(newVal)
     }
   }
 }

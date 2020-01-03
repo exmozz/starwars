@@ -40,7 +40,11 @@ export default {
   computed: {
     winner () {
       if ((this.leftPlayer && this.rightPlayer) > 0) {
-        return (Number(this.leftPlayer) > Number(this.rightPlayer)) ? 'Left' : 'Right'
+        if (this.leftPlayer === this.rightPlayer) {
+          return 'None'
+        } else {
+          return (Number(this.leftPlayer) > Number(this.rightPlayer)) ? 'Left' : 'Right'
+        }
       } else {
         return false
       }
