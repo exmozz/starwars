@@ -1,0 +1,14 @@
+$body-bg: #000;
+$body-color: #eee;
+
+$primary: #ffe300;
+
+@import "~bootstrap/scss/bootstrap";
+@import '~bootstrap-vue/src/index';
+
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s;
+}
+.fade-enter, .fade-leave-to {
+  opacity: 0;
+}
